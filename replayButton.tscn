@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://t1rshjsmpo27"]
+
+[ext_resource type="Script" path="res://replayButton.gd" id="1_hwiah"]
+
+[node name="Replay" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Replay"
+script = ExtResource("1_hwiah")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

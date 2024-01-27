@@ -1,0 +1,183 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd40o1chxfqho"]
+
+[ext_resource type="PackedScene" uid="uid://e2b58lt4wgmd" path="res://SquarePlaceHolder.tscn" id="1_35cwf"]
+[ext_resource type="Script" path="res://main.gd" id="1_hm12h"]
+[ext_resource type="PackedScene" uid="uid://t1rshjsmpo27" path="res://replayButton.tscn" id="2_0v46l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f6fms"]
+font_size = 50
+
+[node name="Main" type="Node"]
+script = ExtResource("1_hm12h")
+
+[node name="Background2" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_top = -17.0
+offset_right = 1201.0
+offset_bottom = 681.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Interface" type="Node2D" parent="."]
+
+[node name="Replay" parent="Interface" instance=ExtResource("2_0v46l")]
+offset_right = 60.0
+offset_bottom = 31.0
+flat = true
+
+[node name="Title" type="Label" parent="Interface"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 529.0
+offset_top = 13.0
+offset_right = 685.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+text = "Tic Tac Toe"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentTurnTitle" type="Label" parent="Interface"]
+offset_left = 990.0
+offset_top = -1.0
+offset_right = 1203.0
+offset_bottom = 71.0
+text = "Current Turn"
+horizontal_alignment = 1
+
+[node name="CurrentTurnValue" type="Label" parent="Interface"]
+offset_left = 1042.0
+offset_top = 27.0
+offset_right = 1154.0
+offset_bottom = 57.0
+text = "x"
+horizontal_alignment = 1
+
+[node name="WinCounter" type="Label" parent="Interface"]
+offset_left = 1034.0
+offset_top = 555.0
+offset_right = 1140.0
+offset_bottom = 578.0
+text = "Win Counter"
+
+[node name="XWinCounter" type="Label" parent="Interface"]
+offset_left = 1062.0
+offset_top = 584.0
+offset_right = 1113.0
+offset_bottom = 608.0
+text = "x : 0"
+
+[node name="OWinCounter" type="Label" parent="Interface"]
+offset_left = 1061.0
+offset_top = 613.0
+offset_right = 1114.0
+offset_bottom = 636.0
+text = "o : 0
+"
+
+[node name="WinScreen" type="Node2D" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="WinScreen"]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1149.0
+offset_bottom = 642.0
+text = "You win !"
+label_settings = SubResource("LabelSettings_f6fms")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DrawScreen" type="Node2D" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="DrawScreen"]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1149.0
+offset_bottom = 642.0
+text = "Draw !"
+label_settings = SubResource("LabelSettings_f6fms")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Game" type="Node2D" parent="."]
+
+[node name="TicTacToePanels" type="Node2D" parent="Game"]
+position = Vector2(442, 170)
+
+[node name="TicTacToePanel" parent="Game/TicTacToePanels" instance=ExtResource("1_35cwf")]
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 67.0
+offset_bottom = 66.0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TicTacToePanel2" parent="Game/TicTacToePanels" instance=ExtResource("1_35cwf")]
+offset_left = 146.0
+offset_top = 3.0
+offset_right = 210.0
+offset_bottom = 67.0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TicTacToePanel3" parent="Game/TicTacToePanels" instance=ExtResource("1_35cwf")]
+offset_left = 276.0
+offset_top = 2.0
+offset_right = 340.0
+offset_bottom = 66.0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TicTacToePanel4" parent="Game/TicTacToePanels" instance=ExtResource("1_35cwf")]
+offset_left = -5.0
+offset_top = 129.0
+offset_right = 59.0
+offset_bottom = 193.0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TicTacToePanel5" parent="Game/TicTacToePanels" instance=ExtResource("1_35cwf")]
+offset_left = 142.0
+offset_top = 127.0
+offset_right = 206.0
+offset_bottom = 191.0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TicTacToePanel6" parent="Game/TicTacToePanels" instance=ExtResource("1_35cwf")]
+offset_left = 285.0
+offset_top = 133.0
+offset_right = 349.0
+offset_bottom = 197.0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TicTacToePanel7" parent="Game/TicTacToePanels" instance=ExtResource("1_35cwf")]
+offset_left = -1.0
+offset_top = 283.0
+offset_right = 63.0
+offset_bottom = 347.0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TicTacToePanel8" parent="Game/TicTacToePanels" instance=ExtResource("1_35cwf")]
+offset_left = 159.0
+offset_top = 282.0
+offset_right = 223.0
+offset_bottom = 346.0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TicTacToePanel9" parent="Game/TicTacToePanels" instance=ExtResource("1_35cwf")]
+offset_left = 292.0
+offset_top = 284.0
+offset_right = 356.0
+offset_bottom = 348.0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true

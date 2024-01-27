@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://e2b58lt4wgmd"]
+
+[ext_resource type="Script" path="res://SquarePlaceHolder.gd" id="1_6611c"]
+
+[node name="Panel" type="Panel"]
+offset_right = 64.0
+offset_bottom = 64.0
+script = ExtResource("1_6611c")
+
+[node name="X" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 1
+offset_right = 63.0
+offset_bottom = 63.0
+text = "X"
+
+[node name="O" type="RichTextLabel" parent="."]
+visible = false
+offset_right = 63.0
+offset_bottom = 63.0
+text = "O
+"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="gui_input" from="X" to="." method="_on_x_gui_input"]
+[connection signal="mouse_exited" from="X" to="." method="_on_x_mouse_exited"]

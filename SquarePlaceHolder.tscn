@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://e2b58lt4wgmd"]
+
+[ext_resource type="Script" path="res://SquarePlaceHolder.gd" id="1_6611c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2q3g1"]
+bg_color = Color(0.231373, 0.231373, 0.231373, 1)
+
+[node name="TicTacToePanel" type="Panel"]
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2q3g1")
+script = ExtResource("1_6611c")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+offset_right = 63.0
+offset_bottom = 63.0
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
